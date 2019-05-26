@@ -60,6 +60,9 @@ class HeaderStyle {
   /// Defaults to black `Icons.chevron_right`.
   final Icon rightChevronIcon;
 
+  final Icon dropUpIcon;
+  final Icon dropDownIcon;
+
   const HeaderStyle({
     this.centerHeaderTitle = false,
     this.formatButtonVisible = true,
@@ -78,5 +81,7 @@ class HeaderStyle {
     this.rightChevronMargin = const EdgeInsets.symmetric(horizontal: 8.0),
     this.leftChevronIcon = const Icon(Icons.chevron_left, color: Colors.black),
     this.rightChevronIcon = const Icon(Icons.chevron_right, color: Colors.black),
+    this.dropUpIcon = const Icon(Icons.arrow_drop_up, color: Colors.black),
+    this.dropDownIcon = const Icon(Icons.arrow_drop_down, color: Colors.black),
   });
 }
