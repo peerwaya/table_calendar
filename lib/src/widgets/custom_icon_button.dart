@@ -2,6 +2,7 @@
 //  Licensed under Apache License v2.0
 
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 class CustomIconButton extends StatelessWidget {
   final Icon icon;
@@ -23,13 +24,10 @@ class CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: margin,
-      child: InkWell(
-        onTap: onTap,
-        borderRadius: BorderRadius.circular(100.0),
-        child: Padding(
-          padding: padding,
-          child: icon,
-        ),
+      child: CupertinoButton(
+        padding: padding,
+        onPressed: onTap,
+        child: icon,
       ),
     );
   }
