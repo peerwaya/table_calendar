@@ -1,8 +1,7 @@
 //  Copyright (c) 2019 Aleksander Woźniak
 //  Licensed under Apache License v2.0
 
-import 'package:flutter/material.dart';
-import '../../table_calendar.dart';
+part of table_calendar;
 
 /// Class containing styling for `TableCalendar`'s days of week panel.
 class DaysOfWeekStyle {
@@ -16,6 +15,9 @@ class DaysOfWeekStyle {
   /// ```
   final TextBuilder dowTextBuilder;
 
+  /// BoxDecoration for the top row of the table
+  final BoxDecoration decoration;
+
   /// Style for weekdays on the top of Calendar.
   final TextStyle weekdayStyle;
 
@@ -24,6 +26,7 @@ class DaysOfWeekStyle {
 
   const DaysOfWeekStyle({
     this.dowTextBuilder,
+    this.decoration = const BoxDecoration(),
     this.weekdayStyle = const TextStyle(color: const Color(0xFF616161)), // Material grey[700]
     this.weekendStyle = const TextStyle(color: const Color(0xFFF44336)), // Material red[500]
   });

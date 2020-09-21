@@ -1,3 +1,71 @@
+## [2.2.3]
+
+* Added onCalendarCreated callback
+
+## [2.2.2]
+
+* Added highlightSelected property to CalendarStyle
+* Added highlightToday property to CalendarStyle
+
+## [2.2.1]
+
+* Added onHeaderTapped callback
+* Added onHeaderLongPressed callback
+* Fixed endDay issue
+
+## [2.2.0]
+
+* Added LongPress Gesture support
+* Added option to disable days based on a predicate
+* Added option to hide DaysOfWeek row
+* Added header Decoration
+* Added headerMargin property
+* Added headerPadding property
+* Added contentPadding property
+
+## [2.1.0]
+
+* Added dynamic events and holidays
+* Added StartingDayOfWeek for every weekday
+* Added support for custom weekend days
+* Added dowWeekdayBuilder and dowWeekendBuilder
+* Broadened intl dependency bounds
+* markersMaxAmount no longer affects markersBuilder
+* Fixed twoWeeks format programmatic issue
+* Fixed visibleDays issue
+* Fixed null dispose issue
+
+## [2.0.2]
+
+* Updated dependencies
+
+## [2.0.1]
+
+* Fixed issue with custom markers for holidays
+
+## [2.0.0]
+
+* Added CalendarController - TableCalendar now features complete programmatic control
+* Removed redundant properties
+* Updated example project
+* Updated README
+
+## [1.2.5]
+
+* Fixed last day of month animation issue
+
+## [1.2.4]
+
+* Improved DateTime logic
+* Event markers can now be set to overflow cell boundaries
+
+## [1.2.3]
+
+* Added startDay and endDay to allow users to specify available date range
+* Added unavailableStyle and unavailableDayBuilder for days outside of given date range
+* Added onUnavailableDaySelected callback
+* Unavailable days will not display event markers
+
 ## [1.2.2]
 
 * Fixed issue with Markers being null

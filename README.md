@@ -12,7 +12,9 @@ Highly customizable, feature-packed Flutter Calendar with gestures, animations a
 ## Features
 
 * Extensive, yet easy to use API
-* Custom Builders for true UI control
+* Custom Builders for truly flexible UI
+* Complete programmatic control with CalendarController
+* Dynamic events
 * Interface for holidays
 * Locale support
 * Vertical autosizing
@@ -20,12 +22,12 @@ Highly customizable, feature-packed Flutter Calendar with gestures, animations a
 * Gesture handling
 * Multiple Calendar formats
 * Multiple days of the week formats
-* Optional programmatic control
+* Specifying available date range
 * Nice, configurable UI out of the box
 
 ## Usage
 
-Make sure to check out [example project](https://github.com/aleksanderwozniak/table_calendar/tree/master/example). 
+Make sure to check out [example project](https://github.com/aleksanderwozniak/table_calendar/blob/2.2.3-stable/example/lib/main.dart). 
 For additional info please refer to [API docs](https://pub.dartlang.org/documentation/table_calendar/latest/table_calendar/table_calendar-library.html).
 
 ### Installation
@@ -34,7 +36,36 @@ Add to pubspec.yaml:
 
 ```yaml
 dependencies:
-  table_calendar: ^1.2.2
+  table_calendar: ^2.2.3
+```
+
+Then import it to your project:
+
+```dart
+import 'package:table_calendar/table_calendar.dart';
+```
+
+And finally create the **TableCalendar** with a `CalendarController`:
+
+```dart
+@override
+void initState() {
+  super.initState();
+  _calendarController = CalendarController();
+}
+
+@override
+void dispose() {
+  _calendarController.dispose();
+  super.dispose();
+}
+
+@override
+Widget build(BuildContext context) {
+  return TableCalendar(
+    calendarController: _calendarController,
+  );
+}
 ```
 
 ### Locale

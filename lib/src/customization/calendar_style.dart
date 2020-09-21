@@ -1,10 +1,13 @@
 //  Copyright (c) 2019 Aleksander Woźniak
 //  Licensed under Apache License v2.0
 
-import 'package:flutter/material.dart';
+part of table_calendar;
 
 /// Class containing styling for `TableCalendar`'s content.
 class CalendarStyle {
+  /// BoxDecoration for each interior row of the table
+  final BoxDecoration contentDecoration;
+
   /// Style of foreground Text for regular weekdays.
   final TextStyle weekdayStyle;
 
@@ -28,6 +31,12 @@ class CalendarStyle {
 
   /// Style of foreground Text for holidays outside of current month.
   final TextStyle outsideHolidayStyle;
+
+  /// Style of foreground Text for days outside of `startDay` - `endDay` Date range.
+  final TextStyle unavailableStyle;
+
+  /// Style of foreground Text for days that contain events.
+  final TextStyle eventDayStyle;
 
   /// Background Color of selected day.
   final Color selectedColor;
@@ -69,7 +78,28 @@ class CalendarStyle {
   /// * `false` - Today will have higher priority than SelectedDay
   final bool renderSelectedFirst;
 
+  /// Determines whether the row of days of the week should be rendered or not.
+  final bool renderDaysOfWeek;
+
+  /// Padding of `TableCalendar`'s content.
+  final EdgeInsets contentPadding;
+
+  /// Margin of Cells' decoration.
+  final EdgeInsets cellMargin;
+
+  /// Specifies if event markers rendered for a day cell can overflow cell's boundaries.
+  /// * `true` - Event markers will be drawn over the cell boundaries
+  /// * `false` - Event markers will not be drawn over the cell boundaries and will be clipped if they are too big
+  final bool canEventMarkersOverflow;
+
+  /// Specifies whether or not SelectedDay should be highlighted.
+  final bool highlightSelected;
+
+  /// Specifies whether or not Today should be highlighted.
+  final bool highlightToday;
+
   const CalendarStyle({
+    this.contentDecoration = const BoxDecoration(),
     this.weekdayStyle = const TextStyle(),
     this.weekendStyle = const TextStyle(color: const Color(0xFFF44336)), // Material red[500]
     this.holidayStyle = const TextStyle(color: const Color(0xFFF44336)), // Material red[500]
@@ -78,6 +108,8 @@ class CalendarStyle {
     this.outsideStyle = const TextStyle(color: const Color(0xFF9E9E9E)), // Material grey[500]
     this.outsideWeekendStyle = const TextStyle(color: const Color(0xFFEF9A9A)), // Material red[200]
     this.outsideHolidayStyle = const TextStyle(color: const Color(0xFFEF9A9A)), // Material red[200]
+    this.unavailableStyle = const TextStyle(color: const Color(0xFFBFBFBF)),
+    this.eventDayStyle = const TextStyle(),
     this.selectedColor = const Color(0xFF5C6BC0), // Material indigo[400]
     this.todayColor = const Color(0xFF9FA8DA), // Material indigo[200]
     this.markersColor = const Color(0xFF263238), // Material blueGrey[900]
@@ -89,5 +121,11 @@ class CalendarStyle {
     this.markersMaxAmount = 4,
     this.outsideDaysVisible = true,
     this.renderSelectedFirst = true,
+    this.renderDaysOfWeek = true,
+    this.contentPadding = const EdgeInsets.only(bottom: 4.0, left: 8.0, right: 8.0),
+    this.cellMargin = const EdgeInsets.all(6.0),
+    this.canEventMarkersOverflow = false,
+    this.highlightSelected = true,
+    this.highlightToday = true,
   });
 }
