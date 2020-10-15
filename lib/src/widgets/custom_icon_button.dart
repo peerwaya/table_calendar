@@ -23,10 +23,14 @@ class _CustomIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: margin,
-      child: CupertinoButton(
-        padding: padding,
-        onPressed: onTap,
-        child: icon,
+      child: SizedBox(
+        child: IconButton(
+          padding: padding,
+          onPressed: onTap,
+          icon: icon,
+        ),
+        height: 56.0,
+        width: 56.0,
       ),
     );
   }

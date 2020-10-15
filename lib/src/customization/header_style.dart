@@ -68,6 +68,7 @@ class HeaderStyle {
   /// Defaults to `true`.
   final bool showLeftChevron;
   final bool showRightChevron;
+  final double height;
 
   /// Header decoration, used to draw border or shadow or change color of the header
   /// Defaults to empty BoxDecoration.
@@ -79,6 +80,7 @@ class HeaderStyle {
     this.formatButtonShowsNext = true,
     this.titleTextBuilder,
     this.titleTextStyle = const TextStyle(fontSize: 17.0),
+    this.height,
     this.formatButtonTextStyle = const TextStyle(),
     this.formatButtonDecoration = const BoxDecoration(
       border: const Border(
