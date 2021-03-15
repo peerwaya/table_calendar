@@ -275,13 +275,13 @@ class _TableCalendarState extends State<TableCalendar>
 
   void _selectPrevious() {
     setState(() {
-      widget.calendarController._selectPrevious();
+      widget.calendarController.previousPage();
     });
   }
 
   void _selectNext() {
     setState(() {
-      widget.calendarController._selectNext();
+      widget.calendarController.nextPage();
     });
   }
 
@@ -384,7 +384,7 @@ class _TableCalendarState extends State<TableCalendar>
 
   Widget _buildHeader() {
     final children = [
-      widget.headerStyle.showLeftChevron
+      widget.headerStyle.leftChevronVisible
           ? _CustomIconButton(
               icon: widget.headerStyle.leftChevronIcon,
               onTap: _selectPrevious,
@@ -409,7 +409,7 @@ class _TableCalendarState extends State<TableCalendar>
           ),
         ),
       ),
-      widget.headerStyle.showRightChevron
+      widget.headerStyle.rightChevronVisible
           ? _CustomIconButton(
               icon: widget.headerStyle.rightChevronIcon,
               onTap: _selectNext,
@@ -729,22 +729,6 @@ class _TableCalendarState extends State<TableCalendar>
         isHoliday: tIsHoliday,
         isEventDay: tIsEventDay,
         calendarStyle: widget.calendarStyle,
-      );
-    }
-  }
-
-  Widget _buildMarker(DateTime date, dynamic event) {
-    if (widget.builders.singleMarkerBuilder != null) {
-      return widget.builders.singleMarkerBuilder(context, date, event);
-    } else {
-      return Container(
-        width: 8.0,
-        height: 8.0,
-        margin: const EdgeInsets.symmetric(horizontal: 0.3),
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: widget.calendarStyle.markersColor,
-        ),
       );
     }
   }
